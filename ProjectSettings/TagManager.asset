@@ -5,8 +5,8 @@ TagManager:
   serializedVersion: 2
   tags:
   - pavement
-  - package
-  - customer
+  - Package
+  - Customer
   layers:
   - Default
   - TransparentFX

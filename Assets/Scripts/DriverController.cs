@@ -5,7 +5,7 @@ using UnityEngine;
 public class DriverController : MonoBehaviour
 {
     [SerializeField] float steerSpeed = 0.1f;
-    [SerializeField] float moveSpeed = 0.001f;
+    [SerializeField] public float moveSpeed = 0.001f;
     private GameObject package;
     // Start is called before the first frame update
     void Start()
@@ -23,13 +23,7 @@ public class DriverController : MonoBehaviour
         transform.Translate(0, speedAmount, 0);
     }
 
-    private void OnTriggerEnter2D(Collider2D collision)
-    {
-        if (collision.gameObject.CompareTag("package"))
-        {
-            Destroy(collision.gameObject);
-        }
-    }
+
 
 
 

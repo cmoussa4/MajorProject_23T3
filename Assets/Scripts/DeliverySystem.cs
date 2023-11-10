@@ -37,7 +37,7 @@ public class DeliverySystem : MonoBehaviour
             Destroy(collision.gameObject, 0.2f);
 
             packHeld = true;
-            spriteRender.color = Color.blue;
+            spriteRender.color = Color.cyan;
 
         }
     }
@@ -51,7 +51,7 @@ public class DeliverySystem : MonoBehaviour
             packages++;
             packHeld = false;
 
-            spriteRender.color = Color.red;
+            spriteRender.color = Color.yellow;
         }
 
     }
