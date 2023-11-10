@@ -21,16 +21,17 @@ public class CameraFollow : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
+        float distance = Vector2.Distance(Camera.current.transform.position, Player.transform.position);
 
         transform.position = Player.transform.position + new Vector3(0, 0f, cameraZoom);
 
         if (dc.moveSpeed > 0f)
         {
-            cameraZoom = -10f;
+            Camera.current.orthographicSize = 5f;
         }
         else
         {
-            transform.position = Player.transform.position + new Vector3(0, 0f, cameraZoom);
+            Camera.current.orthographicSize = 2.5f;
         }
     }
 

@@ -1,18 +1,53 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using TMPro;
 
 public class GameManager : MonoBehaviour
 {
-    // Start is called before the first frame update
-    void Start()
+    public static GameManager Instance;
+    public GameState State;
+
+    int packages = 0;
+    [SerializeField] TextMeshProUGUI packCount;
+    bool packHeld = false;
+    [SerializeField] TextMeshProUGUI packDisplay;
+    SpriteRenderer spriteRender;
+    private void Awake()
     {
-        
+        Instance = this;
     }
 
-    // Update is called once per frame
-    void Update()
+    private void Start()
     {
-        
+        UpdateGameState(GameState.Idle);
     }
+
+    public void UpdateGameState(GameState newState)
+    {
+        State = newState;
+
+        switch (newState)
+        {
+            case GameState.Idle:
+                break;
+            case GameState.DrivingWithNoPackage:
+                break;
+            case GameState.DrivingWithPackage:
+                break;
+            case GameState.PackageDelivered:
+                break;
+            
+                
+        };
+    }
+    public enum GameState
+    {
+        Idle,
+        DrivingWithNoPackage,
+        DrivingWithPackage,
+        PackageDelivered
+    }
+
+
 }
