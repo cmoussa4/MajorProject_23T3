@@ -10,9 +10,14 @@ public class DeliverySystem : MonoBehaviour
     bool packHeld = false;
     [SerializeField] TextMeshProUGUI packDisplay;
     SpriteRenderer spriteRender;
-    private void Start()
+    [SerializeField] GameObject[] Customers;
+    
+    
+    
+    private void Awake()
     {
         spriteRender = GetComponent<SpriteRenderer>();
+        
     }
 
 
@@ -23,17 +28,19 @@ public class DeliverySystem : MonoBehaviour
         if (packHeld)
         {
             packDisplay.SetText("Carrying package");
+            
         }
         else
         {
             packDisplay.SetText("No package held");
+            
         }
     }
-    private void OnTriggerEnter2D(Collider2D collision)
+    public void OnTriggerEnter2D(Collider2D collision)
     {
         if (collision.gameObject.CompareTag("Package") && !packHeld)
         {
-
+            Customers[Random.Range(0, 3)].tag = "Customer";
             Destroy(collision.gameObject, 0.2f);
 
             packHeld = true;
@@ -41,13 +48,18 @@ public class DeliverySystem : MonoBehaviour
 
         }
     }
-    private void OnCollisionEnter2D(Collision2D collision)
+    public void OnCollisionEnter2D(Collision2D collision)
     {
-
+        
 
 
         if (collision.gameObject.CompareTag("Customer") && packHeld)
         {
+            foreach(GameObject customer in Customers)
+            {
+                customer.tag = "Untagged";
+            }
+
             packages++;
             packHeld = false;
 

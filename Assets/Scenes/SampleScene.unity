@@ -3588,6 +3588,37 @@ Transform:
   m_Father: {fileID: 1772329942}
   m_RootOrder: 137
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!1 &349562052
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 349562053}
+  m_Layer: 0
+  m_Name: GameManager
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &349562053
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 349562052}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0.16758229, y: -3.1724033, z: 11.423662}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 0}
+  m_RootOrder: 10
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &350125727
 GameObject:
   m_ObjectHideFlags: 0
@@ -3859,6 +3890,11 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   packCount: {fileID: 766575859}
   packDisplay: {fileID: 907344713}
+  Customers:
+  - {fileID: 191904369}
+  - {fileID: 1568457390}
+  - {fileID: 54050512}
+  - {fileID: 691727386}
 --- !u!1 &373764080
 GameObject:
   m_ObjectHideFlags: 0
@@ -5559,7 +5595,7 @@ Camera:
   far clip plane: 1000
   field of view: 60
   orthographic: 1
-  orthographic size: 2.95
+  orthographic size: 8.748604
   m_Depth: -1
   m_CullingMask:
     serializedVersion: 2
@@ -5583,7 +5619,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 519420028}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: 13.922136, y: -6.62069, z: -10}
+  m_LocalPosition: {x: -0.12, y: -0.04, z: -10}
   m_LocalScale: {x: 0.5000001, y: 0.5000001, z: 0.5}
   m_ConstrainProportionsScale: 0
   m_Children: []
@@ -16282,7 +16318,7 @@ GameObject:
   - component: {fileID: 1568457393}
   m_Layer: 0
   m_Name: CP_V1.0.4_3
-  m_TagString: Customer
+  m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
