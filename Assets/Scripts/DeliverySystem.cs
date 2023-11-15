@@ -14,6 +14,7 @@ public class DeliverySystem : MonoBehaviour
     
     
     
+    
     private void Awake()
     {
         spriteRender = GetComponent<SpriteRenderer>();
@@ -41,6 +42,8 @@ public class DeliverySystem : MonoBehaviour
         if (collision.gameObject.CompareTag("Package") && !packHeld)
         {
             Customers[Random.Range(0, 3)].tag = "Customer";
+            GameObject.FindGameObjectWithTag("Customer").gameObject.GetComponent<SpriteRenderer>().color = Color.green;
+            
             Destroy(collision.gameObject, 0.2f);
 
             packHeld = true;
@@ -58,8 +61,10 @@ public class DeliverySystem : MonoBehaviour
             foreach(GameObject customer in Customers)
             {
                 customer.tag = "Untagged";
+                customer.GetComponent<SpriteRenderer>().color = Color.white;
             }
 
+            
             packages++;
             packHeld = false;
 

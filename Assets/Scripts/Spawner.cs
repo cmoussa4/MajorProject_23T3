@@ -9,6 +9,7 @@ public class Spawner : MonoBehaviour
     private float xPosition;
     private float spawnIntervals;
     [SerializeField] private float spawnTimer = 1f;
+    [SerializeField] Transform[] spawnLocations;
     // Start is called before the first frame update
     void Start()
     {
@@ -18,15 +19,17 @@ public class Spawner : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
+        Spawn();
+    }
+
+    void Spawn()
+    {
         spawnTimer += Time.deltaTime;
 
-        if (spawnTimer >= 5f)
+        if (spawnTimer >= 10f)
         {
             spawnTimer = spawnIntervals;
-            yPosition = Random.Range(-8.5f, 8.5f);
-            xPosition = Random.Range(-15f, 15f);
-            Vector3 randomspawn = new Vector3(xPosition, yPosition, 0.0f);
-            Instantiate(package, randomspawn, Quaternion.identity);
+            Instantiate(package,spawnLocations[Random.Range(0,spawnLocations.Length-1)].position, Quaternion.identity);
         }
     }
 }
