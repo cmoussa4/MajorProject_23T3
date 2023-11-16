@@ -15,8 +15,7 @@ public class DeliverySystem : MonoBehaviour
     
     private void Awake()
     {
-        spriteRender = GetComponent<SpriteRenderer>();
-        
+        spriteRender = GetComponent<SpriteRenderer>();      
     }
 
 
@@ -70,4 +69,6 @@ public class DeliverySystem : MonoBehaviour
         }
 
     }
+
+  
 }
