@@ -38,7 +38,7 @@ public class DeliverySystem : MonoBehaviour
     {
         if (collision.gameObject.CompareTag("Package") && !packHeld)
         {
-            Customers[Random.Range(0, 9)].tag = "Customer";
+            Customers[Random.Range(0, Customers.Length-1)].tag = "Customer";
             GameObject.FindGameObjectWithTag("Customer").gameObject.GetComponent<SpriteRenderer>().color = Color.green;
             
             Destroy(collision.gameObject, 0.1f);

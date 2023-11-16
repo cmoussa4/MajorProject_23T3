@@ -5,8 +5,6 @@ using UnityEngine;
 public class Spawner : MonoBehaviour
 {
     [SerializeField] GameObject package;
-    private float yPosition;
-    private float xPosition;
     private float spawnIntervals;
     [SerializeField] private float spawnTimer = 1f;
     [SerializeField] Transform[] spawnLocations;
@@ -26,7 +24,7 @@ public class Spawner : MonoBehaviour
     {
         spawnTimer += Time.deltaTime;
 
-        if (spawnTimer >= 10f)
+        if (spawnTimer >= 5f)
         {
             spawnTimer = spawnIntervals;
             Instantiate(package,spawnLocations[Random.Range(0,spawnLocations.Length-1)].position, Quaternion.identity);

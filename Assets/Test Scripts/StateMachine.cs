@@ -9,7 +9,7 @@ public class StateMachine : MonoBehaviour
     [SerializeField] GameObject enemy;
     [SerializeField] GameObject player;
     [SerializeField] float chaseSpeed = 0.1f;
-    private bool chase = false;
+    private float dist;
     // Start is called before the first frame update
     void Start()
     {
@@ -20,7 +20,14 @@ public class StateMachine : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-           
+        if (dist < 3f)
+        {
+            ChangeState();
+        }
+        else if(dist > 3f)
+        {
+            ChangeState();
+        }
     }
 
     void ChangeState()
@@ -30,9 +37,7 @@ public class StateMachine : MonoBehaviour
         {
             case State.StateA:
                 currentState = State.StateB;
-      
-                
-                
+                               
                 Debug.Log(currentState);
                 break;
 
@@ -50,10 +55,9 @@ public class StateMachine : MonoBehaviour
 
     void Chase()
     {
-        float dist = Vector2.Distance(enemy.transform.position, player.transform.position);
+        dist = Vector2.Distance(enemy.transform.position, player.transform.position);
         if (dist <3f)
         {
-            chase = true;
             enemy.transform.position = Vector2.MoveTowards(enemy.transform.position, player.transform.position, chaseSpeed * Time.deltaTime);
         }
     }
