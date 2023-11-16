@@ -13,8 +13,6 @@ public class DeliverySystem : MonoBehaviour
     [SerializeField] GameObject[] Customers;
     
     
-    
-    
     private void Awake()
     {
         spriteRender = GetComponent<SpriteRenderer>();
@@ -44,7 +42,7 @@ public class DeliverySystem : MonoBehaviour
             Customers[Random.Range(0, 3)].tag = "Customer";
             GameObject.FindGameObjectWithTag("Customer").gameObject.GetComponent<SpriteRenderer>().color = Color.green;
             
-            Destroy(collision.gameObject, 0.2f);
+            Destroy(collision.gameObject, 0.1f);
 
             packHeld = true;
             spriteRender.color = Color.cyan;
