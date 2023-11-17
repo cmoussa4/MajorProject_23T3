@@ -47,6 +47,11 @@ public class DeliverySystem : MonoBehaviour
             spriteRender.color = Color.cyan;
 
         }
+
+        if (collision.gameObject.CompareTag("Speedboost"))
+        {
+            Destroy(collision.gameObject);
+        }
     }
     public void OnCollisionEnter2D(Collision2D collision)
     {

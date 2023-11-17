@@ -7,9 +7,7 @@ TagManager:
   - pavement
   - Package
   - Customer
-  - Customer2
-  - Customer3
-  - Customer4
+  - Speedboost
   layers:
   - Default
   - TransparentFX

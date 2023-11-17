@@ -37,7 +37,13 @@ public class DriverController : MonoBehaviour
     }
 
 
-
+    private void OnTriggerEnter2D(Collider2D collision)
+    {
+        if (collision.gameObject.CompareTag("Speedboost"))
+        {
+            moveSpeed += 0.001f;
+        }
+    }
 
 
 }
