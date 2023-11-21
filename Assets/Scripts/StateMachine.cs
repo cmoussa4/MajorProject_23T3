@@ -7,6 +7,8 @@ public class StateMachine : MonoBehaviour
     enum State { StateA,StateB,StateC};
     private State currentState;
 
+    
+
     // Start is called before the first frame update
     void Start()
     {

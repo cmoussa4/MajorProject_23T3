@@ -986,6 +986,8 @@ MonoBehaviour:
   - {fileID: 507646191}
   - {fileID: 1104871399}
   - {fileID: 975063041}
+  speedspawnLocations: []
+  Speedboost: {fileID: 0}
 --- !u!4 &169539162
 Transform:
   m_ObjectHideFlags: 0
@@ -2502,7 +2504,7 @@ Camera:
   far clip plane: 1000
   field of view: 60
   orthographic: 1
-  orthographic size: 5.4596405
+  orthographic size: 6.04
   m_Depth: -1
   m_CullingMask:
     serializedVersion: 2

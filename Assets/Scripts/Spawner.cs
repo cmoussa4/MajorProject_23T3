@@ -12,8 +12,8 @@ public class Spawner : MonoBehaviour
     [SerializeField] GameObject Speedboost;
     DriverController dc;
     bool canSpawn = false;
-    private float speedspawnIntervals;
-    private float speedspawnTimer;
+    public float speedspawnIntervals;
+    public float speedspawnTimer;
 
     private void Awake()
     {
@@ -32,7 +32,7 @@ public class Spawner : MonoBehaviour
         Spawn();
     }
 
-    void Spawn()
+    public void Spawn()
     {
         spawnTimer += Time.deltaTime;
         speedspawnTimer += Time.deltaTime;
