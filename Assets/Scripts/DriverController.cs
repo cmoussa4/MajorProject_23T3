@@ -23,8 +23,8 @@ public class DriverController : MonoBehaviour
         timeCount = (int)Time.time;
 
         timerDisplay.text = "Timer: " + timeCount.ToString() + " Seconds";
-        float steerAmount = Input.GetAxis("Horizontal") * steerSpeed;
-        float speedAmount = Input.GetAxis("Vertical") * moveSpeed;
+        float steerAmount = Input.GetAxis("Horizontal") * steerSpeed * Time.deltaTime;
+        float speedAmount = Input.GetAxis("Vertical") * moveSpeed * Time.deltaTime; 
         transform.Rotate(0, 0, -steerAmount);
         transform.Translate(0, speedAmount, 0);
 

@@ -16880,7 +16880,7 @@ SpriteRenderer:
   m_LightmapParameters: {fileID: 0}
   m_SortingLayerID: 0
   m_SortingLayer: 0
-  m_SortingOrder: 1
+  m_SortingOrder: 2
   m_Sprite: {fileID: 6121683534337745368, guid: 2529f58c0f0f4784d925363eac539680, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 0
@@ -21821,6 +21821,8 @@ MonoBehaviour:
   speedspawnLocations:
   - {fileID: 1986674089}
   Speedboost: {fileID: 3504832108466899745, guid: 425e99c7ba00ebc459ab36244ccd119f, type: 3}
+  speedspawnIntervals: 0
+  speedspawnTimer: 0
 --- !u!4 &2017898146
 Transform:
   m_ObjectHideFlags: 0
@@ -23260,11 +23262,11 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 5805438426231822941, guid: d289e9c06e1fcc74aaf44f19baaaae7e, type: 3}
       propertyPath: moveSpeed
-      value: 0.008
+      value: 10
       objectReference: {fileID: 0}
     - target: {fileID: 5805438426231822941, guid: d289e9c06e1fcc74aaf44f19baaaae7e, type: 3}
       propertyPath: steerSpeed
-      value: 0.3
+      value: 300
       objectReference: {fileID: 0}
     - target: {fileID: 5805438426231822941, guid: d289e9c06e1fcc74aaf44f19baaaae7e, type: 3}
       propertyPath: timerDisplay
@@ -23316,7 +23318,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 5805438426231822943, guid: d289e9c06e1fcc74aaf44f19baaaae7e, type: 3}
       propertyPath: m_SortingOrder
-      value: 1
+      value: 2
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: d289e9c06e1fcc74aaf44f19baaaae7e, type: 3}

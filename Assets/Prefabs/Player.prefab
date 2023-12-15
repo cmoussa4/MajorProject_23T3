@@ -125,8 +125,10 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 973c75d1531ea0d4faad216923aa3493, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  steerSpeed: 0.2
-  moveSpeed: 0.005
+  steerSpeed: 100
+  moveSpeed: 50
+  timerDisplay: {fileID: 0}
+  timeCount: 0
 --- !u!50 &5805438426231822913
 Rigidbody2D:
   serializedVersion: 4
