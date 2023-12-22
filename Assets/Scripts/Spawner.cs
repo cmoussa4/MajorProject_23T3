@@ -9,7 +9,6 @@ public class Spawner : MonoBehaviour
     [SerializeField] private float spawnTimer = 1f;
     [SerializeField] Transform[] spawnLocations;
     [SerializeField] Transform[] speedspawnLocations;
-    [SerializeField] GameObject Speedboost;
     DriverController dc;
     bool canSpawn = false;
     public float speedspawnIntervals;
@@ -23,7 +22,6 @@ public class Spawner : MonoBehaviour
     void Start()
     {
         spawnTimer = spawnIntervals;
-        speedspawnTimer = speedspawnIntervals;
     }
 
     // Update is called once per frame
@@ -45,10 +43,5 @@ public class Spawner : MonoBehaviour
                       
         }
 
-        if(speedspawnTimer >= 10f)
-        {
-            speedspawnTimer = speedspawnIntervals;
-            Instantiate(Speedboost, speedspawnLocations[Random.Range(0, speedspawnLocations.Length - 1)].position, Quaternion.identity);
-        }
     }
 }
