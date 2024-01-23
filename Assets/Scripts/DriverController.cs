@@ -6,15 +6,18 @@ using UnityEngine.SceneManagement;
 
 public class DriverController : MonoBehaviour
 {
-    [SerializeField] float steerSpeed = 0.1f;
-    [SerializeField] public float moveSpeed = 0.001f;
+    [SerializeField] float steerSpeed = 5f;
+    [SerializeField] float moveSpeed = 250f;
     [SerializeField] TextMeshProUGUI timerDisplay;
+    [SerializeField] AudioSource engine;
     public int timeCount;
     
 
     // Update is called once per frame
     void Update()
     {
+
+        PlayEngine();
         timeCount = (int)Time.time;
 
         timerDisplay.text = "Timer: " + timeCount.ToString() + " Seconds";
@@ -27,7 +30,7 @@ public class DriverController : MonoBehaviour
         {
             SceneManager.LoadScene(0);
         }
-        
+
 
     }
 
@@ -51,7 +54,27 @@ public class DriverController : MonoBehaviour
     }
 
 
+    private void PlayEngine()
+    {
+        if (Input.GetKeyDown(KeyCode.UpArrow) || Input.GetKeyDown(KeyCode.W))
+        {
+            engine.Play();
+        }
+        if (Input.GetKeyUp(KeyCode.UpArrow) || Input.GetKeyUp(KeyCode.W))
+        {
+            engine.Pause();
+        }
 
+        if(Input.GetKeyDown(KeyCode.DownArrow) || Input.GetKeyDown(KeyCode.S))
+        {
+            engine.Play();
+        }
+
+        if (Input.GetKeyUp(KeyCode.DownArrow) || Input.GetKeyUp(KeyCode.S))
+        {
+            engine.Play();
+        }
+    }
 
 
 
