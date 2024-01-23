@@ -31,10 +31,29 @@ public class DriverController : MonoBehaviour
 
     }
 
+    private void OnTriggerEnter2D(Collider2D collision)
+    {
+        if (collision.gameObject.CompareTag("Road"))
+        {
+            steerSpeed = 250f;
+            moveSpeed = 5f;
+        }
+        else if (collision.gameObject.CompareTag("pavement"))
+        {
+            steerSpeed = 200f;
+            moveSpeed = 3f;
+        }
+        else
+        {
+            steerSpeed = 200f;
+            moveSpeed = 3f;
+        }
+    }
 
 
-   
-    
+
+
+
 
 
 }

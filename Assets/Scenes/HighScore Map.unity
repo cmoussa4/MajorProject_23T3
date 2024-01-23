@@ -22068,7 +22068,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 2034282460}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: -3.6830378, y: 2.1405191, z: -0.08501118}
+  m_LocalPosition: {x: -3.6830378, y: 2.34, z: -0.08501118}
   m_LocalScale: {x: 50, y: 40, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
@@ -23247,11 +23247,11 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 5805438426231822941, guid: d289e9c06e1fcc74aaf44f19baaaae7e, type: 3}
       propertyPath: moveSpeed
-      value: 10
+      value: 5
       objectReference: {fileID: 0}
     - target: {fileID: 5805438426231822941, guid: d289e9c06e1fcc74aaf44f19baaaae7e, type: 3}
       propertyPath: steerSpeed
-      value: 300
+      value: 250
       objectReference: {fileID: 0}
     - target: {fileID: 5805438426231822941, guid: d289e9c06e1fcc74aaf44f19baaaae7e, type: 3}
       propertyPath: timerDisplay
