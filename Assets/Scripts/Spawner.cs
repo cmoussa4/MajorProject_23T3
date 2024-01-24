@@ -11,8 +11,6 @@ public class Spawner : MonoBehaviour
     [SerializeField] Transform[] speedspawnLocations;
     DriverController dc;
     bool canSpawn = false;
-    public float speedspawnIntervals;
-    public float speedspawnTimer;
 
     private void Awake()
     {
@@ -33,7 +31,6 @@ public class Spawner : MonoBehaviour
     public void Spawn()
     {
         spawnTimer += Time.deltaTime;
-        speedspawnTimer += Time.deltaTime;
 
         if (spawnTimer >= 5f)
         {

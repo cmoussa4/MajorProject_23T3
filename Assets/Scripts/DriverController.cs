@@ -10,9 +10,14 @@ public class DriverController : MonoBehaviour
     [SerializeField] float moveSpeed = 250f;
     [SerializeField] TextMeshProUGUI timerDisplay;
     [SerializeField] AudioSource engine;
+    [SerializeField] TrailRenderer skidmark1;
+    [SerializeField] TrailRenderer skidmark2;
     public int timeCount;
-    
-
+    private Shake shake;
+    private void Awake()
+    {
+        shake = GameObject.FindGameObjectWithTag("ScreenShake").GetComponent<Shake>();
+    }
     // Update is called once per frame
     void Update()
     {
@@ -41,7 +46,7 @@ public class DriverController : MonoBehaviour
             steerSpeed = 250f;
             moveSpeed = 5f;
         }
-        else if (collision.gameObject.CompareTag("pavement"))
+        /*else if (collision.gameObject.CompareTag("pavement"))
         {
             steerSpeed = 200f;
             moveSpeed = 3f;
@@ -50,7 +55,23 @@ public class DriverController : MonoBehaviour
         {
             steerSpeed = 200f;
             moveSpeed = 3f;
+        }*/
+
+        
+    }
+
+    private void OnTriggerExit2D(Collider2D collision)
+    {
+        if (collision.gameObject.CompareTag("Road"))
+        {
+            steerSpeed = 200f;
+            moveSpeed = 3f;
         }
+    }
+
+    private void OnCollisionEnter2D(Collision2D collision)
+    {
+        shake.ShakeFunction();
     }
 
 
@@ -59,20 +80,28 @@ public class DriverController : MonoBehaviour
         if (Input.GetKeyDown(KeyCode.UpArrow) || Input.GetKeyDown(KeyCode.W))
         {
             engine.Play();
+            skidmark1.emitting = true;
+            skidmark2.emitting = true;
         }
         if (Input.GetKeyUp(KeyCode.UpArrow) || Input.GetKeyUp(KeyCode.W))
         {
             engine.Pause();
+            skidmark1.emitting = false;
+            skidmark2.emitting = false;
         }
 
         if(Input.GetKeyDown(KeyCode.DownArrow) || Input.GetKeyDown(KeyCode.S))
         {
             engine.Play();
+            skidmark1.emitting = true;
+            skidmark2.emitting = true;
         }
 
         if (Input.GetKeyUp(KeyCode.DownArrow) || Input.GetKeyUp(KeyCode.S))
         {
             engine.Play();
+            skidmark1.emitting = false;
+            skidmark2.emitting = false;
         }
     }
 

@@ -12,6 +12,8 @@ public class DriverControllerTwo : MonoBehaviour
     DeliverySystemTwo ds2;
     public int timeCount;
     [SerializeField] AudioSource engine;
+    [SerializeField] TrailRenderer skidmark1;
+    [SerializeField] TrailRenderer skidmark2;
 
 
     private void Start()
@@ -67,20 +69,28 @@ public class DriverControllerTwo : MonoBehaviour
         if (Input.GetKeyDown(KeyCode.UpArrow) || Input.GetKeyDown(KeyCode.W))
         {
             engine.Play();
+            skidmark1.emitting = true;
+            skidmark2.emitting = true;
         }
         if (Input.GetKeyUp(KeyCode.UpArrow) || Input.GetKeyUp(KeyCode.W))
         {
             engine.Pause();
+            skidmark1.emitting = false;
+            skidmark2.emitting = false;
         }
 
         if (Input.GetKeyDown(KeyCode.DownArrow) || Input.GetKeyDown(KeyCode.S))
         {
             engine.Play();
+            skidmark1.emitting = true;
+            skidmark2.emitting = true;
         }
 
         if (Input.GetKeyUp(KeyCode.DownArrow) || Input.GetKeyUp(KeyCode.S))
         {
             engine.Play();
+            skidmark1.emitting = false;
+            skidmark2.emitting = false;
         }
     }
 
