@@ -6,11 +6,12 @@ using UnityEngine.SceneManagement;
 
 public class DriverControllerTwo : MonoBehaviour
 {
-    [SerializeField] float steerSpeed = 0.1f;
-    [SerializeField] public float moveSpeed = 0.001f;
+    [SerializeField] float steerSpeed = 250f;
+    [SerializeField] public float moveSpeed = 5f;
     [SerializeField] TextMeshProUGUI timerDisplay;
-    public int timeCount;
     DeliverySystemTwo ds2;
+    public int timeCount;
+    [SerializeField] AudioSource engine;
 
 
     private void Start()
@@ -20,6 +21,7 @@ public class DriverControllerTwo : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
+        PlayEngine();
         timeCount = 100;
   
         timeCount -= (int)Time.time;
@@ -35,10 +37,52 @@ public class DriverControllerTwo : MonoBehaviour
             SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex);
         }
 
+        
+
     }
 
 
+    private void OnTriggerEnter2D(Collider2D collision)
+    {
+        if (collision.gameObject.CompareTag("Road"))
+        {
+            steerSpeed = 250f;
+            moveSpeed = 5f;
+        }
+        else if (collision.gameObject.CompareTag("pavement"))
+        {
+            steerSpeed = 200f;
+            moveSpeed = 3f;
+        }
+        else
+        {
+            steerSpeed = 200f;
+            moveSpeed = 3f;
+        }
+    }
 
+
+    private void PlayEngine()
+    {
+        if (Input.GetKeyDown(KeyCode.UpArrow) || Input.GetKeyDown(KeyCode.W))
+        {
+            engine.Play();
+        }
+        if (Input.GetKeyUp(KeyCode.UpArrow) || Input.GetKeyUp(KeyCode.W))
+        {
+            engine.Pause();
+        }
+
+        if (Input.GetKeyDown(KeyCode.DownArrow) || Input.GetKeyDown(KeyCode.S))
+        {
+            engine.Play();
+        }
+
+        if (Input.GetKeyUp(KeyCode.DownArrow) || Input.GetKeyUp(KeyCode.S))
+        {
+            engine.Play();
+        }
+    }
 
 
 

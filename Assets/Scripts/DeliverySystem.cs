@@ -16,7 +16,7 @@ public class DeliverySystem : MonoBehaviour
     
     private void Awake()
     {
-        spriteRender = GetComponent<SpriteRenderer>();      
+        spriteRender = GetComponent<SpriteRenderer>();     
     }
 
 
@@ -50,10 +50,6 @@ public class DeliverySystem : MonoBehaviour
 
         }
 
-        if (collision.gameObject.CompareTag("Speedboost"))
-        {
-            Destroy(collision.gameObject);
-        }
     }
     public void OnCollisionEnter2D(Collision2D collision)
     {
