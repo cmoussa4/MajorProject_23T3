@@ -14,10 +14,11 @@ public class DriverControllerTwo : MonoBehaviour
     [SerializeField] AudioSource engine;
     [SerializeField] TrailRenderer skidmark1;
     [SerializeField] TrailRenderer skidmark2;
+    private Shake shake;
 
-
-    private void Start()
+    private void Awake()
     {
+        shake = GameObject.FindGameObjectWithTag("ScreenShake").GetComponent<Shake>();
         ds2 = GetComponent<DeliverySystemTwo>();
     }
     // Update is called once per frame
@@ -61,6 +62,20 @@ public class DriverControllerTwo : MonoBehaviour
             steerSpeed = 200f;
             moveSpeed = 3f;
         }
+    }
+
+    private void OnTriggerExit2D(Collider2D collision)
+    {
+        if (collision.gameObject.CompareTag("Road"))
+        {
+            steerSpeed = 200f;
+            moveSpeed = 3f;
+        }
+    }
+
+    private void OnCollisionEnter2D(Collision2D collision)
+    {
+        shake.ShakeFunction();
     }
 
 
