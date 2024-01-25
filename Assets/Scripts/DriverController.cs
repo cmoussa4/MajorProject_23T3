@@ -47,27 +47,22 @@ public class DriverController : MonoBehaviour
             steerSpeed = 250f;
             moveSpeed = 5f;
         }
-        /*else if (collision.gameObject.CompareTag("pavement"))
-        {
-            steerSpeed = 200f;
-            moveSpeed = 3f;
-        }
-        else
-        {
-            steerSpeed = 200f;
-            moveSpeed = 3f;
-        }*/
 
         
     }
 
     private void OnTriggerExit2D(Collider2D collision)
     {
-        if (collision.gameObject.CompareTag("Road"))
-        {
-            steerSpeed = 200f;
-            moveSpeed = 3f;
-        }
+      steerSpeed = 200f;
+      moveSpeed = 3f;
+        
+    }
+
+    private void OnTriggerStay2D(Collider2D collision)
+    {
+        if(collision.gameObject.CompareTag("Road"))
+        steerSpeed = 250f;
+        moveSpeed = 5f;
     }
 
     private void OnCollisionEnter2D(Collision2D collision)
@@ -76,6 +71,7 @@ public class DriverController : MonoBehaviour
         shakeSFX.time = 0.3f;
         shakeSFX.Play();
     }
+
 
 
     private void PlayEngine()

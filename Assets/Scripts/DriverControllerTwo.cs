@@ -53,25 +53,23 @@ public class DriverControllerTwo : MonoBehaviour
             steerSpeed = 250f;
             moveSpeed = 5f;
         }
-        /*else if (collision.gameObject.CompareTag("pavement"))
+    }
+
+    private void OnTriggerStay2D(Collider2D collision)
+    {
+        if (collision.gameObject.CompareTag("Road"))
         {
-            steerSpeed = 200f;
-            moveSpeed = 3f;
+            steerSpeed = 250f;
+            moveSpeed = 5f;
         }
-        else
-        {
-            steerSpeed = 200f;
-            moveSpeed = 3f;
-        }*/
+       
     }
 
     private void OnTriggerExit2D(Collider2D collision)
     {
-        if (collision.gameObject.CompareTag("Road"))
-        {
-            steerSpeed = 200f;
-            moveSpeed = 3f;
-        }
+       steerSpeed = 200f;
+       moveSpeed = 3f;
+        
     }
 
     private void OnCollisionEnter2D(Collision2D collision)
