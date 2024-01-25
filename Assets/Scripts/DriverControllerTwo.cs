@@ -10,7 +10,7 @@ public class DriverControllerTwo : MonoBehaviour
     [SerializeField] public float moveSpeed = 5f;
     [SerializeField] TextMeshProUGUI timerDisplay;
     DeliverySystemTwo ds2;
-    public int timeCount;
+    public float seconds = 40f;
     [SerializeField] AudioSource engine;
     [SerializeField] AudioSource shakeSFX;
     [SerializeField] TrailRenderer skidmark1;
@@ -21,22 +21,22 @@ public class DriverControllerTwo : MonoBehaviour
     {
         shake = GameObject.FindGameObjectWithTag("ScreenShake").GetComponent<Shake>();
         ds2 = GetComponent<DeliverySystemTwo>();
+        seconds = 40f;
     }
     // Update is called once per frame
     void Update()
     {
         PlayEngine();
-        timeCount = 100;
   
-        timeCount -= (int)Time.time;
+        seconds -= Time.deltaTime;
         
-        timerDisplay.text = "Timer: " + timeCount.ToString() + " Seconds";
+        timerDisplay.text = "Timer: " + ((int)seconds).ToString() + " Seconds";
         float steerAmount = Input.GetAxis("Horizontal") * steerSpeed * Time.deltaTime;
         float speedAmount = Input.GetAxis("Vertical") * moveSpeed * Time.deltaTime;
         transform.Rotate(0, 0, -steerAmount);
         transform.Translate(0, speedAmount, 0);
 
-        if(timeCount == 0)
+        if(seconds <= 0)
         {
             SceneManager.LoadScene(0);
         }
@@ -61,6 +61,8 @@ public class DriverControllerTwo : MonoBehaviour
         {
             steerSpeed = 250f;
             moveSpeed = 5f;
+            engine.volume = 0.2f;
+            engine.pitch = 1f;
         }
        
     }
@@ -69,7 +71,8 @@ public class DriverControllerTwo : MonoBehaviour
     {
        steerSpeed = 200f;
        moveSpeed = 3f;
-        
+        engine.volume = 0.1f;
+        engine.pitch = 0.6f;
     }
 
     private void OnCollisionEnter2D(Collision2D collision)

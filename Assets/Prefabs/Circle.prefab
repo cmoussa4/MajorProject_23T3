@@ -11,7 +11,7 @@ GameObject:
   - component: {fileID: 4113795102346550413}
   - component: {fileID: 4113795102346550414}
   - component: {fileID: 4113795102346550415}
-  - component: {fileID: -2732164956992544867}
+  - component: {fileID: 3101213137875818673}
   m_Layer: 0
   m_Name: Circle
   m_TagString: Untagged
@@ -107,7 +107,7 @@ Animator:
   m_AllowConstantClipSamplingOptimization: 1
   m_KeepAnimatorStateOnDisable: 0
   m_WriteDefaultValuesOnDisable: 0
---- !u!114 &-2732164956992544867
+--- !u!114 &3101213137875818673
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -116,6 +116,6 @@ MonoBehaviour:
   m_GameObject: {fileID: 4113795102346550448}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: b5381799b1d5d8640972e97c42f36e3b, type: 3}
+  m_Script: {fileID: 11500000, guid: add09818c02cc2e44a1a955b718ee057, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 

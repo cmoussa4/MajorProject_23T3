@@ -8,7 +8,12 @@ public class PauseMenu : MonoBehaviour
 {
     [SerializeField] GameObject pausemenuUI;
     bool isgamePaused = false;
+    DriverController dc;
 
+    private void Awake()
+    {
+        dc = GetComponent<DriverController>();
+    }
     private void Update()
     {
         if (Input.GetKeyDown(KeyCode.Escape))
@@ -43,5 +48,7 @@ public class PauseMenu : MonoBehaviour
     public void Menu()
     {
         SceneManager.LoadScene(0);
+        Time.timeScale = 1f;
+        isgamePaused = false;
     }
 }
