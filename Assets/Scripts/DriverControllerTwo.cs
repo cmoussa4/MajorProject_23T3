@@ -12,6 +12,7 @@ public class DriverControllerTwo : MonoBehaviour
     DeliverySystemTwo ds2;
     public int timeCount;
     [SerializeField] AudioSource engine;
+    [SerializeField] AudioSource shakeSFX;
     [SerializeField] TrailRenderer skidmark1;
     [SerializeField] TrailRenderer skidmark2;
     private Shake shake;
@@ -37,7 +38,7 @@ public class DriverControllerTwo : MonoBehaviour
 
         if(timeCount == 0)
         {
-            SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex);
+            SceneManager.LoadScene(0);
         }
 
         
@@ -52,7 +53,7 @@ public class DriverControllerTwo : MonoBehaviour
             steerSpeed = 250f;
             moveSpeed = 5f;
         }
-        else if (collision.gameObject.CompareTag("pavement"))
+        /*else if (collision.gameObject.CompareTag("pavement"))
         {
             steerSpeed = 200f;
             moveSpeed = 3f;
@@ -61,7 +62,7 @@ public class DriverControllerTwo : MonoBehaviour
         {
             steerSpeed = 200f;
             moveSpeed = 3f;
-        }
+        }*/
     }
 
     private void OnTriggerExit2D(Collider2D collision)
@@ -76,6 +77,8 @@ public class DriverControllerTwo : MonoBehaviour
     private void OnCollisionEnter2D(Collision2D collision)
     {
         shake.ShakeFunction();
+        shakeSFX.time = 0.3f;
+        shakeSFX.Play();
     }
 
 

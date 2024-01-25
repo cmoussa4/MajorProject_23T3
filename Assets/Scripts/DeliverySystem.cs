@@ -12,6 +12,10 @@ public class DeliverySystem : MonoBehaviour
     SpriteRenderer spriteRender;
     [SerializeField] GameObject[] Customers;
     [SerializeField] GameObject pickUp;
+    [SerializeField] GameObject popUp;
+    [SerializeField] AudioSource pickupSFX;
+    [SerializeField] AudioSource DeliveredSFX;
+
     
     
     private void Awake()
@@ -44,7 +48,7 @@ public class DeliverySystem : MonoBehaviour
             GameObject.FindGameObjectWithTag("Customer").gameObject.GetComponent<SpriteRenderer>().color = Color.green;
             
             Destroy(collision.gameObject, 0.1f);
-
+            pickupSFX.Play();
             packHeld = true;
             spriteRender.color = Color.cyan;
 
@@ -58,13 +62,14 @@ public class DeliverySystem : MonoBehaviour
 
         if (collision.gameObject.CompareTag("Customer") && packHeld)
         {
-            foreach(GameObject customer in Customers)
+            Instantiate(popUp,GameObject.FindGameObjectWithTag("Customer").transform.position , Quaternion.identity);
+            foreach (GameObject customer in Customers)
             {
                 customer.tag = "Untagged";
                 customer.GetComponent<SpriteRenderer>().color = Color.white;
             }
-
-            
+            DeliveredSFX.time = 0.8f;
+            DeliveredSFX.Play();
             packages++;
             packHeld = false;
 

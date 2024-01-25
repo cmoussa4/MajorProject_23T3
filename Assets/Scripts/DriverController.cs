@@ -14,6 +14,7 @@ public class DriverController : MonoBehaviour
     [SerializeField] TrailRenderer skidmark2;
     public int timeCount;
     private Shake shake;
+    [SerializeField] AudioSource shakeSFX;
     private void Awake()
     {
         shake = GameObject.FindGameObjectWithTag("ScreenShake").GetComponent<Shake>();
@@ -72,6 +73,8 @@ public class DriverController : MonoBehaviour
     private void OnCollisionEnter2D(Collision2D collision)
     {
         shake.ShakeFunction();
+        shakeSFX.time = 0.3f;
+        shakeSFX.Play();
     }
 
 
