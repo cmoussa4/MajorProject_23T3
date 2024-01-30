@@ -35,7 +35,7 @@ public class DriverController : MonoBehaviour
 
         if(seconds >= 100)
         {
-            SceneManager.LoadScene(0);
+            SceneManager.LoadScene(5);
         }
 
 
@@ -67,7 +67,7 @@ public class DriverController : MonoBehaviour
         if(collision.gameObject.CompareTag("Road"))
         steerSpeed = 250f;
         moveSpeed = 5f;
-        engine.volume = 0.2f;
+        engine.volume = 0.5f;
         engine.pitch = 1f;
     }
 

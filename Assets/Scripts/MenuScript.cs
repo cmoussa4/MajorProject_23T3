@@ -5,7 +5,17 @@ using UnityEngine.SceneManagement;
 
 public class MenuScript : MonoBehaviour
 {
-   public void Play()
+    private Canvas canvas;
+
+    private void Start()
+    {
+        if (canvas != null)
+        {
+            canvas = GameObject.FindGameObjectWithTag("Canvas").GetComponent<Canvas>();
+        }
+        
+    }
+    public void Play()
     {
         SceneManager.LoadScene(1);
     }
@@ -23,5 +33,13 @@ public class MenuScript : MonoBehaviour
     public void Back()
     {
         SceneManager.LoadScene(0);
+    }
+
+    public void DeleteCanvas()
+    {
+        if(canvas!= null)
+        {
+            Destroy(canvas);
+        }   
     }
 }

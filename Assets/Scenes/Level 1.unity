@@ -443,7 +443,7 @@ MonoBehaviour:
   steerSpeed: 250
   moveSpeed: 5
   timerDisplay: {fileID: 940906045}
-  timeCount: 30
+  seconds: 40
   engine: {fileID: 153684170}
   shakeSFX: {fileID: 534290044}
   skidmark1: {fileID: 101373991}
@@ -4600,7 +4600,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 575889660}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: 21.45, y: -1.0889754, z: 0.04280281}
+  m_LocalPosition: {x: 19.2, y: -1.0889754, z: 0.04280281}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
@@ -5546,7 +5546,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 760262573}
   m_LocalRotation: {x: -0, y: -0, z: 0.7071068, w: 0.7071068}
-  m_LocalPosition: {x: 3.68, y: -11.78, z: 0.04280281}
+  m_LocalPosition: {x: 3.68, y: -10.3, z: 0.04280281}
   m_LocalScale: {x: 1, y: 2, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
@@ -10061,7 +10061,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1504020236}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: -14.6, y: -1.0889754, z: 0.04280281}
+  m_LocalPosition: {x: -12.3, y: -1.0889754, z: 0.04280281}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
@@ -11209,7 +11209,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1642739165}
   m_LocalRotation: {x: -0, y: -0, z: 0.7071068, w: 0.7071068}
-  m_LocalPosition: {x: 3.68, y: 9.3, z: 0.04280281}
+  m_LocalPosition: {x: 3.68, y: 7.6, z: 0.04280281}
   m_LocalScale: {x: 1, y: 2, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []

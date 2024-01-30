@@ -61,7 +61,7 @@ public class DriverControllerTwo : MonoBehaviour
         {
             steerSpeed = 250f;
             moveSpeed = 5f;
-            engine.volume = 0.2f;
+            engine.volume = 0.5f;
             engine.pitch = 1f;
         }
        
